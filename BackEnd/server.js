@@ -4,12 +4,18 @@ import cors from 'cors';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import cookieParser from 'cookie-parser';
+import 'dotenv';
+
 const salt = 10;
+
+
 
 
 const app= express();
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+   
+));
 app.use(cookieParser());
 
 const daba = mysql2.createConnection({
@@ -49,6 +55,9 @@ app.post('/login',(req, res) =>{
             bcrypt.compare(req.body.password.toString(), data[0].password, (err, response) => {
                 if(err) return res.json({Error: "Error in password comparison"});
                 if(response){
+                    const username = data[0].username;
+                    const JWT_SECRET=process.env.JWT_SECRET||'Frase';
+                    const token = jwt.sign({username}, JWT_SECRET,{expiresIn:'30m'});
                     return res.json({Status: "Success"});
                 }
                 else{
