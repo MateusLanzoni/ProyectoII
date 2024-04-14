@@ -8,6 +8,8 @@ import {Contacto} from './pages/Contacto'
 import {Home} from './pages/Home'
 import { Register } from './pages/Register'
 import { Login } from './pages/Login'
+import { Cuenta } from './pages/Cuenta'
+
 function App() {
   return(
     <div className='App'>
@@ -20,6 +22,12 @@ function App() {
         <Route path= '/ppal' element={<Home></Home>}></Route>
         <Route path= '/registro' element={<Register></Register>}></Route>
         <Route path= '/login' element={<Login></Login>}></Route>
+        <Route path= '/login' element={<Login></Login>}></Route>
+        <Route path= '/cuenta' element={<Cuenta></Cuenta>}></Route>
+        
+        
+        
+        
         
 
       </Routes>

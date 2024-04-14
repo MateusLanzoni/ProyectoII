@@ -13,9 +13,11 @@ const salt = 10;
 
 const app= express();
 app.use(express.json());
-app.use(cors(
-   
-));
+app.use(cors({
+    origin: ["http://localhost:5173"],
+    methods: ["POST","GET"],
+    credentials: true
+}));
 app.use(cookieParser());
 
 const daba = mysql2.createConnection({
@@ -58,6 +60,7 @@ app.post('/login',(req, res) =>{
                     const username = data[0].username;
                     const JWT_SECRET=process.env.JWT_SECRET||'Frase';
                     const token = jwt.sign({username}, JWT_SECRET,{expiresIn:'30m'});
+                    res.cookie('token',token);
                     return res.json({Status: "Success"});
                 }
                 else{
@@ -68,7 +71,7 @@ app.post('/login',(req, res) =>{
 
         }
         else{
-            return res.json({Error: "No email in existence"});
+            return res.json({Error: "No existe una cuenta con ese usuario"});
 
         }
     })

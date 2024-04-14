@@ -8,6 +8,7 @@ export const Login = () =>{
         username:'',
         password:'',
     })
+    axios.defaults.withCredentials = true;
     const navigate = useNavigate();
     const handleSubmit = (event) =>{
         event.preventDefault();
