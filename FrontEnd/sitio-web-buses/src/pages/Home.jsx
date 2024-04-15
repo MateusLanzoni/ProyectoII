@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Navbar } from './Navbar.jsx'
-
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './Home.css'
 import './Footer.jsx'
 import Footer from './Footer.jsx';
@@ -13,7 +14,34 @@ import RutaSOABosq from './Ubicaciones/RSOABosque.jsx'
 
 
 export const Home = () => {
+  const [auth , setAuth] = useState(false);
+
+  const navigate=useNavigate();
+  axios.defaults.withCredentials = true;
+
+  useEffect(() => {
+        axios.get('http://localhost:4000/ppal')
+        .then(res => {
+            if(res.data.Status === "Success"){
+                setAuth(true);
+                
+                
+            }
+            else{
+                setAuth(false);
+                navigate('/login');
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching data: ', error);
+            setAuth(false);
+            navigate('/login');
+        });
+        
+  },[])
   const[ruta, setRuta] = useState("Ruta predeterminada");
+
+
   
 
   const handleOnChange =(e) =>{
@@ -21,8 +49,11 @@ export const Home = () => {
     console.log(seleccionado);
     setRuta(seleccionado);
   }
-  return (
-    <div className='cuerpo'>
+  let contenido;
+  if(auth){
+    contenido=
+    <>
+      <div className='cuerpo'>
         <Navbar></Navbar>
         
         <div className='barra' >
@@ -118,6 +149,23 @@ export const Home = () => {
         
         <Footer></Footer>
     
-    </div>
+     </div>
+
+    
+    </>
+
+  }
+  else{
+    contenido =
+    <>
+    
+    </>
+
+  }
+  
+  return (
+    <>
+      {contenido}
+    </>
   );
 };

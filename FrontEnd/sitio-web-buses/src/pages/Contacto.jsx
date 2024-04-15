@@ -1,11 +1,43 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './Contacto.css'
 import Footer from './Footer.jsx'
 import { Navbar } from './Navbar.jsx'
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export const Contacto = () => {
-  return (
-    <>
+  const [auth , setAuth] = useState(false);
+
+  const navigate=useNavigate();
+
+  axios.defaults.withCredentials = true;
+
+  useEffect(() => {
+        axios.get('http://localhost:4000/contacto')
+        .then(res => {
+            if(res.data.Status === "Success"){
+                setAuth(true);
+                
+                
+            }
+            else{
+                setAuth(false);
+                navigate('/login');
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching data: ', error);
+            setAuth(false);
+            navigate('/login');
+        });
+        
+  },[])
+
+    let contenido;
+
+    if(auth){
+      contenido =
+      <>
       <div className='paginaCont'>
         <Navbar></Navbar>
         <div className='contact'>
@@ -28,6 +60,21 @@ export const Contacto = () => {
       </div>
     
     
+      
+      
+      </>
+    }
+    else{
+      contenido =
+      <></>
+    }
+
+
+
+  return (
+    <>
+    {contenido}
+      
     </>
   );
 };
