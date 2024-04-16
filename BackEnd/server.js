@@ -24,8 +24,7 @@ const daba = mysql2.createConnection({
     host: "localhost",
     user: "root",
     password:"",
-    database: 'sitiowebbuses'
-
+    database: 'buseseia'
 
 })
 const verifyUser = (req, res, next) => {
