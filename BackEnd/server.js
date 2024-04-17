@@ -8,9 +8,6 @@ import 'dotenv';
 
 const salt = 10;
 
-
-
-
 const app= express();
 app.use(express.json());
 app.use(cors({
@@ -25,7 +22,6 @@ const daba = mysql2.createConnection({
     user: "root",
     password:"",
     database: 'buseseia'
-
 })
 const verifyUser = (req, res, next) => {
     const token = req.cookies.token;
@@ -53,23 +49,15 @@ const verifyUser = (req, res, next) => {
 }
 app.get('/cuenta',verifyUser,(req,res) =>{
     return res.json({Status: "Success", name:req.name, username:req.username, identification:req.identification});
-
-
 })
 app.get('/ppal',verifyUser,(req,res) =>{
     return res.json({Status: "Success"});
-
-
 })
 app.get('/contacto',verifyUser,(req,res) =>{
     return res.json({Status: "Success"});
-
-
 })
 app.get('/info',verifyUser,(req,res) =>{
     return res.json({Status: "Success"});
-
-
 })
 app.post('/registro', (req, res) => {
     const sql = "INSERT INTO usuarios (name, username, password, identification) VALUES (?)";
@@ -77,13 +65,10 @@ app.post('/registro', (req, res) => {
     bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
         if(err) return res.json({Error: "Error for hassing password"});
         const values = [
-
             req.body.name,
             req.body.username,
             hash,
             req.body.identification
-           
-           
         ]
         daba.query(sql, [values], (err,result) => {
             if(err) return res.json({Error: "Error in saving the data"});
@@ -113,11 +98,9 @@ app.post('/login',(req, res) =>{
                 }
 
             })
-
         }
         else{
             return res.status(404).json({Error: "No existe una cuenta con ese usuario"});
-
         }
     })
 })
@@ -128,6 +111,4 @@ app.get('/logout',(req,res) =>{
 })
 app.listen(4000, () => {
     console.log("Running.");
-
-
 })

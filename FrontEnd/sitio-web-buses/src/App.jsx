@@ -15,8 +15,6 @@ function App() {
     <div className='App'>
     <BrowserRouter>
       <Routes>
-
-
         <Route path='/info' element={<Info></Info>}></Route>
         <Route path='/contacto' element={<Contacto></Contacto>}></Route>
         <Route path= '/ppal' element={<Home></Home>}></Route>
@@ -24,20 +22,9 @@ function App() {
         <Route path= '/login' element={<Login></Login>}></Route>
         <Route path= '/login' element={<Login></Login>}></Route>
         <Route path= '/cuenta' element={<Cuenta></Cuenta>}></Route>
-        
-        
-        
-        
-        
-
       </Routes>
-    
-    
-    
     </BrowserRouter>
     </div>
-
-
   );
 }
 
