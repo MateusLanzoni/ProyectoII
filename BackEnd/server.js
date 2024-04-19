@@ -41,7 +41,7 @@ const verifyUser = (req, res, next) => {
                     req.identification = decoded.identification;
                     next();
                 } else {
-                    return res.status(400).json({Error: "Información del token incompleta"});
+                    return res.json({Error: "Información del token incompleta"});
                 }
             }
         })
@@ -80,10 +80,10 @@ app.post('/registro', (req, res) => {
 app.post('/login',(req, res) =>{
     const sql = 'SELECT * FROM usuarios WHERE username = ?';
     daba.query(sql,[req.body.username], (err, data) => {
-        if(err) return res.status(500).json({Error: "Login error in server"});
+        if(err) return res.json({Error: "Login error in server"});
         if(data.length > 0){
             bcrypt.compare(req.body.password.toString(), data[0].password, (err, response) => {
-                if(err) return res.status(500).json({Error: "Error in password comparison"});
+                if(err) return res.json({Error: "Error in password comparison"});
                 if(response){
                     const username = data[0].username;
                     const name = data[0].name;
@@ -94,7 +94,7 @@ app.post('/login',(req, res) =>{
                     return res.json({Status: "Success"});
                 }
                 else{
-                    return res.status(401).json({Error: "La contraseña no coincide"});
+                    return res.json({Error: "La contraseña no coincide"});
                 }
 
             })
