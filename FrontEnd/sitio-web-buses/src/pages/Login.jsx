@@ -1,29 +1,58 @@
-import React, {useState} from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'  
-import "./Login.css"
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import "./Login.css";
 
-export const Login = () =>{
+export const Login = () => {
+    const [auth, setAuth] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [values, setValues] = useState({
-        username:'',
-        password:'',
-    })
-    axios.defaults.withCredentials = true;
+        username: '',
+        password: '',
+    });
+
     const navigate = useNavigate();
-    const handleSubmit = (event) =>{
+
+    
+    useEffect(() => {
+        axios.defaults.withCredentials = true;
+
+        
+        axios.get('http://localhost:4000/verify-token')
+            .then(response => {
+                if (response.data.Status === "Token valido") {
+                    navigate('/ppal');  
+                } else {
+                    setIsLoading(false);  
+                }
+            })
+            .catch(error => {
+                console.error('Error verifying token: ', error);
+                setIsLoading(false);
+            });
+    }, [navigate]);
+
+    const handleSubmit = (event) => {
         event.preventDefault();
         axios.post('http://localhost:4000/login', values)
-        .then(res => {
-            if(res.data.Status === "Success"){
-                navigate('/ppal');
-            }
-            else{
-                alert(res.data.Error);
-            }
-        })
-        .then(err => console.log(err));
+            .then(res => {
+                if (res.data.Status === "Success") {
+                    navigate('/ppal');
+                } else {
+                    alert(res.data.Error);
+                }
+            })
+            .catch(err => {
+                console.error('Error al iniciar sesion: ', err);
+                alert('Error al iniciar sesion');
+            });
+    };
+
+    if (isLoading) {
+        return <div>Loading...</div>;
     }
-    return(
+
+    return (
         <div className="pagina">
             <div className="container">
                 <form className='form' onSubmit={handleSubmit}>
@@ -40,24 +69,15 @@ export const Login = () =>{
                             <input type="password"  placeholder="Contraseña" required
                             onChange={e => setValues({...values, password: e.target.value})}/>
                         </div>
-                
-
                     </div>
                     <div className="contBoton">
                         <button className="boton-submit"type="submit">Login</button>
                     </div>
                 </form>
                 <div className="link-registro">
-                    <p>No tiene una cuenta? <a href='/registro'> Registrarse </a></p>
+                    <p>No tiene una cuenta? <Link to="/registro">Registrarse</Link></p>
                 </div>
-                
-            
-
-
-
-
-             </div>
+            </div>
         </div>
-        
     );
-}
+};

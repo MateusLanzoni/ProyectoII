@@ -22,7 +22,7 @@ export const Register = () =>{
                 navigate('/login')
             }
             else{
-                alert("Error")
+                alert(res.data.Error)
             }
         })
         .then(err => console.log(err));
