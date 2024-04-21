@@ -11,11 +11,14 @@ import {
 
 function RSanAntonio () {
   const positon = {lat: 6.2476, lng: -75.5658}
+  const EIA = {lat:6.1566, lng: -75.5176}
   return (
-    <APIProvider apiKey="AIzaSyAqSAPSOBWQXZrrtLjy1PJSd7ud8wnjjXM">
-    <div className='rutaSanAntonio'>
-      <Map zoom={11} center={positon}></Map>
-    </div>
+    <APIProvider apiKey= "AIzaSyAqSAPSOBWQXZrrtLjy1PJSd7ud8wnjjXM">
+      <div className='rutaSanAntonio'>
+       <Map zoom={11} center={positon}>
+          <AdvancedMarker position={EIA}></AdvancedMarker>
+        </Map>
+      </div>
     </APIProvider>
   )
 }
