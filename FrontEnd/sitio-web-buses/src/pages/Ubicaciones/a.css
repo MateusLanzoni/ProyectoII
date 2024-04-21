@@ -1,56 +1,32 @@
 .rutaClinica{
     width: 50%;
     aspect-ratio: 14/6 ;
-    background-color: rgb(251, 255, 0);
     min-height: 50px;
-   
-    border:1px solid green;
-
 }
 .rutaExitoRo{
     width: 50%;
     aspect-ratio: 14/6 ;
-    background-color: rgb(255, 0, 0);
     min-height: 50px;
-   
-    border:1px solid green;
-
 }
 .rutaMayorca{
     width: 50%;
     aspect-ratio: 14/6 ;
-    background-color: rgb(248, 154, 12);
     min-height: 50px;
-   
-    border:1px solid green;
-
 }
 .rutaRionegro{
     width: 50%;
     aspect-ratio: 14/6 ;
-    background-color: rgb(0, 0, 0);
     min-height: 50px;
-   
-    border:1px solid green;
-
 }
 .rutaSanAntonio{
     width: 50%;
     aspect-ratio: 14/6 ;
-    background-color: rgb(43, 113, 194);
     min-height: 50px;
-   
-    border:1px solid green;
-
 }
 .rutaSofaABosq{
     width: 50%;
     aspect-ratio: 14/6 ;
-    background-color: rgb(43, 255, 0);
     min-height: 50px;
-   
-    border:1px solid green;
-
 }
 @media (max-width: 690px){
     .rutaClinica{
