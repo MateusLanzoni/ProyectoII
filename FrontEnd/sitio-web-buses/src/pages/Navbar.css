@@ -10,6 +10,7 @@ nav{
    background-color: hsl(160, 90%, 4%);
    position: sticky;
    top: 0;
+   z-index: 3;
 }
 nav .titulos{
    font-size: 1.8rem;

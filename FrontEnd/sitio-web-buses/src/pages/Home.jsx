@@ -54,7 +54,7 @@ export const Home = () => {
     contenido=
     <>
       <div className='cuerpo'>
-        <Navbar></Navbar>
+        <Navbar className='A'></Navbar>
         
         <div className='barra' >
           <select  className='opciones' value={ruta} onChange={(e)=>(handleOnChange(e))}>

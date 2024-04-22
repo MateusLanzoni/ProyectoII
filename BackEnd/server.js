@@ -138,7 +138,7 @@ app.post('/login',(req, res) =>{
         if(err) return res.json({Error: "Login error in server"});
         if(data.length > 0){
             bcrypt.compare(req.body.password.toString(), data[0].password, (err, response) => {
-                if(err) return res.json({Error: "Error in password comparison"});
+                if(err) return res.json({Error: "Error al comparar con"});
                 if(response){
                     const username = data[0].username;
                     const name = data[0].name;
