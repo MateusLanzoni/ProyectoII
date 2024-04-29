@@ -39,10 +39,7 @@ export const Login = () => {
                     alert(res.data.Error);
                 }
             })
-            .catch(err => {
-                console.error('Error al iniciar sesion: ', err);
-                alert('Error al iniciar sesion');
-            });
+            .then(err => console.log(err));
     };
 
     if (isLoading) {
