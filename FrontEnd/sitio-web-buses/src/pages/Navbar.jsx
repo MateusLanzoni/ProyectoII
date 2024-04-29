@@ -1,8 +1,5 @@
 import React from "react";
-
-
 import { Link, NavLink } from "react-router-dom";
-
 import "./Navbar.css";
 import { useState } from "react";
 
@@ -30,9 +27,7 @@ export const  Navbar = () => {
                         <li>
                             <NavLink to ="/info">Info</NavLink>
                         </li>
-                
                     </ul> 
                 </nav>
-
     );
 };

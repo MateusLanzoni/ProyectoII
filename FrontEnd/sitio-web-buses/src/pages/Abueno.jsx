@@ -11,16 +11,10 @@ export const Abueno = () => {
       } else {
         content = <div>Show this when the function returns false</div>;
       }
-  
-  
-  
     return (
     <div>
         {content}
-
-
-
-        
+   
     </div>
   )
 }

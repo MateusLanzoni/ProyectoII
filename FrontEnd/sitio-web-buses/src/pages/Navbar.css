@@ -2,7 +2,6 @@
     background-color: rgb(36, 56, 110);
 }
 
-
 nav{
    display: flex;
    justify-content: space-between;
@@ -18,12 +17,9 @@ nav .titulos{
    font-weight: bold;
    text-decoration: none;
    color: white;
-
-   
 }
 nav ul{
-    display: flex;
-    
+    display: flex; 
 }
 nav ul li{
     list-style: none;
@@ -48,7 +44,6 @@ nav .menu{
     justify-content: space-between;
     width: 2.25rem;
     height: 2rem;
-
 }
 
 nav .menu span{
@@ -56,7 +51,6 @@ nav .menu span{
     width: 100%;
     background-color: #fff;
     border-radius: 0,2rem;
-
 }
 @media (max-width: 700px){
     nav .menu{

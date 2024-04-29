@@ -7,18 +7,13 @@ import axios from 'axios';
 
 export const Contacto = () => {
   const [auth , setAuth] = useState(false);
-
   const navigate=useNavigate();
-
   axios.defaults.withCredentials = true;
-
   useEffect(() => {
         axios.get('http://localhost:4000/contacto')
         .then(res => {
             if(res.data.Status === "Success"){
                 setAuth(true);
-                
-                
             }
             else{
                 setAuth(false);
@@ -30,11 +25,8 @@ export const Contacto = () => {
             setAuth(false);
             navigate('/login');
         });
-        
   },[])
-
     let contenido;
-
     if(auth){
       contenido =
       <>
@@ -53,28 +45,18 @@ export const Contacto = () => {
             <br></br>
             <p className='informacion'>O contactar al servicio desde su página web: https://seditrans.com</p>
           </div>
-          
         </div>
         <Footer></Footer>
-
       </div>
-    
-    
-      
-      
       </>
     }
     else{
       contenido =
       <></>
     }
-
-
-
   return (
     <>
-    {contenido}
-      
+    {contenido} 
     </>
   );
 };

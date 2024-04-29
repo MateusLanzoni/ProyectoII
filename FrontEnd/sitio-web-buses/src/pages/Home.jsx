@@ -12,7 +12,6 @@ import RutaRionegro from './Ubicaciones/RRionegro.jsx'
 import RutaSanAn from './Ubicaciones/RSanAntonio.jsx'
 import RutaSOABosq from './Ubicaciones/RSOABosque.jsx'
 
-
 export const Home = () => {
   const [auth , setAuth] = useState(false);
 
@@ -23,9 +22,7 @@ export const Home = () => {
         axios.get('http://localhost:4000/ppal')
         .then(res => {
             if(res.data.Status === "Success"){
-                setAuth(true);
-                
-                
+                setAuth(true);   
             }
             else{
                 setAuth(false);
@@ -36,14 +33,9 @@ export const Home = () => {
             console.error('Error fetching data: ', error);
             setAuth(false);
             navigate('/login');
-        });
-        
+        });        
   },[])
   const[ruta, setRuta] = useState("Ruta predeterminada");
-
-
-  
-
   const handleOnChange =(e) =>{
     const seleccionado= e.target.value;
     console.log(seleccionado);
@@ -55,10 +47,8 @@ export const Home = () => {
     <>
       <div className='cuerpo'>
         <Navbar className='A'></Navbar>
-        
         <div className='barra' >
           <select  className='opciones' value={ruta} onChange={(e)=>(handleOnChange(e))}>
-
             <option className='opcion'value='preder'>Ruta Predeterminada</option>
             <option className='opcion' value='clinica'>Ruta Clinica</option>
             <option className='opcion' value='exito'>Ruta Exito-Robledo</option>
@@ -66,7 +56,6 @@ export const Home = () => {
             <option className='opcion' value='rionegro'>Ruta Rionegro</option>
             <option className='opcion' value='sanAntonio'>Ruta San Antonio</option>
             <option className='opcion' value='sofasa'>Ruta Sofasa-Bosques</option>
-
           </select>
         </div>
         <div className='rectangulo'>
@@ -91,49 +80,37 @@ export const Home = () => {
             {
               ruta == 'sofasa' && (<RutaSOABosq></RutaSOABosq>)
             }
-            
-            
-            
             <article className='tiempo'>
                 {
                   ruta === 'clinica' && (
                     <h3 className='nombreBus'>Ruta Clinica</h3>
                   )
-                  
                 }
                 {
                   ruta === 'exito' && (
                     <h3 className='nombreBus'>Ruta Exito-Robledo</h3>
                   )
-                  
                 }
                 {
                   ruta === 'mayorca' && (
                     <h3 className='nombreBus'>Ruta Mayorca</h3>
                   )
-                  
                 }
                 {
                   ruta === 'rionegro' && (
                     <h3 className='nombreBus'>Ruta Rionegro</h3>
                   )
-                  
                 }
                 {
                   ruta === 'sanAntonio' && (
                     <h3 className='nombreBus'>Ruta San Antonio</h3>
-                  )
-                  
+                  ) 
                 }
-
                 {
                   ruta === 'sofasa' && (
                     <h3 className='nombreBus'>Ruta Sofasa</h3>
-                  )
-                  
+                  ) 
                 }
-            
-              
               <br></br>
               <p>hora de llegada</p>
             </article>
@@ -146,21 +123,14 @@ export const Home = () => {
               <p>hora de llegada</p>
             </article>
         </div>
-        
-        <Footer></Footer>
-    
      </div>
-
-    
+     <Footer></Footer>
     </>
-
   }
   else{
     contenido =
     <>
-    
     </>
-
   }
   
   return (

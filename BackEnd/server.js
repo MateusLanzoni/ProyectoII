@@ -15,6 +15,13 @@ app.use(cors({
     methods: ["POST","GET"],
     credentials: true
 }));
+
+//Recibir data de los buses.
+app.post('/postendpoint', (req, res) => {
+    console.log('Received data:', req.body); 
+    res.json({ message: 'Data received' }); 
+});
+
 app.use(cookieParser());
 
 const daba = mysql2.createConnection({
@@ -62,11 +69,9 @@ const verifyToken = (req, res, next) => {
     });
 };
 
-
 app.get('/verify-token', verifyToken, (req, res) => {
     res.json({ Status: "Token valido" });
 });
-
 
 app.get('/cuenta',verifyUser,(req,res) =>{
     return res.json({Status: "Success", name:req.name, username:req.username, identification:req.identification});
@@ -83,7 +88,6 @@ app.get('/info',verifyUser,(req,res) =>{
 app.post('/registro', (req, res) => {
     const { name, username, password, identification } = req.body;
 
-   
     if (!password || password.length < 8) {
         return res.json({ Error: "La contraseña tiene que tener minimo 8 caracteres" });
     }
@@ -91,17 +95,14 @@ app.post('/registro', (req, res) => {
         return res.json({ Error: "La contraseña no puede ser la misma que el nombre y nombre de usuario" });
     }
 
-    
     if (!username || username.length < 4 || !name || name.length < 4) {
         return res.json({ Error: "Username and name must be at least 4 characters long" });
     }
 
-    
     if (!identification || (identification.length !== 8 && identification.length !== 10)) {
         return res.json({ Error: "La identificación tiene que ser de 8 o de 10 caracteres" });
     }
-
-    
+   
     const checkIdSql = "SELECT * FROM usuarios WHERE identification = ?";
     daba.query(checkIdSql, [identification], (err, result) => {
         if (err) {
@@ -112,7 +113,6 @@ app.post('/registro', (req, res) => {
             return res.json({ Error: "Esa identificación ya esta registrada" });
         }
 
-        
         const sql = "INSERT INTO usuarios (name, username, password, identification) VALUES (?)";
         bcrypt.hash(password, salt, (err, hash) => {
             if (err) {
@@ -130,7 +130,6 @@ app.post('/registro', (req, res) => {
         })
     })
 })
-
 
 app.post('/login',(req, res) =>{
     const sql = 'SELECT * FROM usuarios WHERE username = ?';
@@ -151,7 +150,6 @@ app.post('/login',(req, res) =>{
                 else{
                     return res.json({Error: "La contraseña no coincide"});
                 }
-
             })
         }
         else{
