@@ -3,15 +3,12 @@ import { Link, useNavigate } from 'react-router-dom'
 import './Register.css'
 import axios from 'axios'
 
-
 export const Register = () =>{
     const [values, setValues] = useState({
         name:'',
         username:'',
         password:'',
         identification: ''
-
-
     })
     const navigate = useNavigate();
     const handleSubmit = (event) =>{
@@ -53,8 +50,6 @@ export const Register = () =>{
                         onChange={e => setValues({...values, identification: e.target.value})}/>
                     </div>
                     
-                
-
                 </div>
                 <div className="contBoton">
                     <button className="boton-submit"type="submit">Registrarse</button>
@@ -63,17 +58,7 @@ export const Register = () =>{
                 <div className="link-login">
                     <p>Ya tiene una cuenta? <a href='/login'> Login </a></p>
                 </div>
-                
-            
-
-
-
-
              </div>
         </div>
-        
-
-
     );
-
 }

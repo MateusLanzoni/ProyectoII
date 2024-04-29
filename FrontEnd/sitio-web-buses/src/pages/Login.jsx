@@ -13,11 +13,8 @@ export const Login = () => {
 
     const navigate = useNavigate();
 
-    
     useEffect(() => {
-        axios.defaults.withCredentials = true;
-
-        
+        axios.defaults.withCredentials = true;  
         axios.get('http://localhost:4000/verify-token')
             .then(response => {
                 if (response.data.Status === "Token valido") {
