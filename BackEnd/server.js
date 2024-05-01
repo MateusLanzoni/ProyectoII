@@ -96,7 +96,7 @@ app.post('/registro', (req, res) => {
     }
 
     if (!username || username.length < 4 || !name || name.length < 4) {
-        return res.json({ Error: "Username and name must be at least 4 characters long" });
+        return res.json({ Error: "El nombre y nombre de usuario deben ser de almenos 4 caracteres" });
     }
 
     if (!identification || (identification.length !== 8 && identification.length !== 10)) {
@@ -110,25 +110,38 @@ app.post('/registro', (req, res) => {
             return res.status(500).json({ Error: "Error al chequear la identificación" });
         }
         if (result.length > 0) {
-            return res.json({ Error: "Esa identificación ya esta registrada" });
+            return res.json({ Error: "Esa identificación ya está registrada" });
         }
-
-        const sql = "INSERT INTO usuarios (name, username, password, identification) VALUES (?)";
-        bcrypt.hash(password, salt, (err, hash) => {
+    
+        // Check if username or name already exists
+        const checkUserAndNameSql = "SELECT * FROM usuarios WHERE username = ? OR name = ?";
+        daba.query(checkUserAndNameSql, [username, name], (err, result) => {
             if (err) {
-                console.error("Error al hashear la contraseña: ", err);
-                return res.status(500).json({ Error: "Error al hashear la contraseña" });
+                console.error("Error checking username or name: ", err);
+                return res.status(500).json({ Error: "Error checking username or name" });
             }
-            const values = [name, username, hash, identification];
-            daba.query(sql, [values], (err, result) => {
+            if (result.length > 0) {
+                return res.json({ Error: "El nombre de usuario o el nombre ya están registrados" });
+            }
+    
+            // If all checks are clear, proceed to hash password and insert new user
+            const sql = "INSERT INTO usuarios (name, username, password, identification) VALUES (?)";
+            bcrypt.hash(password, salt, (err, hash) => {
                 if (err) {
-                    console.error("Error al guardar los datos: ", err);
-                    return res.status(500).json({ Error: "Error al guardar los datos" });
+                    console.error("Error al hashear la contraseña: ", err);
+                    return res.status(500).json({ Error: "Error al hashear la contraseña" });
                 }
-                return res.json({ Status: "Success" });
-            })
-        })
-    })
+                const values = [name, username, hash, identification];
+                daba.query(sql, [values], (err, result) => {
+                    if (err) {
+                        console.error("Error al guardar los datos: ", err);
+                        return res.status(500).json({ Error: "Error al guardar los datos" });
+                    }
+                    return res.json({ Status: "Success" });
+                });
+            });
+        });
+    });
 })
 
 app.post('/login',(req, res) =>{

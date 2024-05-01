@@ -65,11 +65,13 @@
 .user-icon{
     color: rgb(41, 36, 58);
     font-size: 25px;
+    margin-right: 10px;
     
 }
 .card-icon{
     color: rgb(41, 36, 58);
     font-size: 29px;
+    margin-right: 10px;
 }
 .cerrar-cesion{
     background-color: rgb(236, 3, 3);

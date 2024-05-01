@@ -12,7 +12,7 @@ import {
 function RRionegro () {
   const positon = {lat: 6.1416, lng: -75.4126}
   return (
-    <APIProvider apiKey= "AIzaSyAqSAPSOBWQXZrrtLjy1PJSd7ud8wnjjXM">
+    <APIProvider apiKey= {import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
       <div className='rutaRionegro'>
         <Map zoom={12} center={positon}></Map>
       </div>

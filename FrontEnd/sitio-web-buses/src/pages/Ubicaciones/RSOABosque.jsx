@@ -12,7 +12,7 @@ import {
 function RSOABosque () {
   const positon = {lat: 6.2476, lng: -75.5658}
   return (
-    <APIProvider apiKey="AIzaSyAqSAPSOBWQXZrrtLjy1PJSd7ud8wnjjXM">
+    <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
       <div className='rutaSofaABosque'>
         <Map zoom={11} center={positon}></Map>
      </div>
