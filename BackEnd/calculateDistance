@@ -1,0 +1,37 @@
+function initMap() {
+  // Map options
+  const options = {
+    zoom: 8,
+    center: { lat: 34.0522, lng: -118.2437 } // Example center (Los Angeles)
+  };
+
+  // New map
+  const map = new google.maps.Map(document.getElementById('map'), options);
+
+  // Directions service and display
+  const directionsService = new google.maps.DirectionsService();
+  const directionsDisplay = new google.maps.DirectionsRenderer();
+  directionsDisplay.setMap(map);
+
+  calculateAndDisplayRoute(directionsService, directionsDisplay);
+}
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  const origin = { lat: 34.0522, lng: -118.2437 }; // Replace with your origin coordinates
+  const destination = { lat: 34.133094, lng: -117.914388 }; // Replace with your destination coordinates
+
+  directionsService.route(
+    {
+      origin: origin,
+      destination: destination,
+      travelMode: 'DRIVING'
+    },
+    (response, status) => {
+      if (status === 'OK') {
+        directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    }
+  );
+}
