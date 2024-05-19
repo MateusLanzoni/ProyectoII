@@ -40,14 +40,34 @@ function RutaPredeterminada() {
       const allStops = [
 
         // Ruta Rionegro
-        { lat: 6.263920, lng: -75.431600, title: "Sector Belén Rionegro", route: "rionegro" },
-        { lat: 6.257140, lng: -75.439080, title: "Glorieta del Tránsito", route: "rionegro" },
-        { lat: 6.256350, lng: -75.444620, title: "Puente de Cuatro Esquinas", route: "rionegro" },
-        { lat: 6.254280, lng: -75.452100, title: "Supermercado Éxito Rionegro", route: "rionegro" },
-        { lat: 6.252920, lng: -75.454880, title: "CC San Nicolás", route: "rionegro" },
-        { lat: 6.250540, lng: -75.456730, title: "CC Sabana", route: "rionegro" },
-        { lat: 6.248160, lng: -75.458670, title: "Supermercado Jumbo", route: "rionegro" },
-        { lat: 6.243970, lng: -75.463220, title: "Calle Madera", route: "rionegro" },
+        { lat: 6.178285, lng: -75.367920, title: "Sector Belén Rionegro", route: "rionegro" },//
+        { lat: 6.160497, lng: -75.369010, title: "Glorieta del Tránsito", route: "rionegro" },
+        { lat: 6.152817, lng: -75.369027, title: "Puente de Cuatro Esquinas", route: "rionegro" },
+        { lat: 6.149092, lng: -75.378082, title: "Supermercado Éxito Rionegro", route: "rionegro" },
+        { lat: 6.146634, lng: -75.379318, title: "CC San Nicolás", route: "rionegro" },
+        { lat: 6.142199, lng: -75.380496, title: "Supermercado Jumbo", route: "rionegro" },
+        { lat: 6.138285, lng: -75.384879, title: "Mall El Antojo", route: "rionegro" },
+        { lat: 6.131672, lng: -75.399217, title: "Colegio Horizontes", route: "rionegro" },
+        { lat: 6.124781, lng: -75.421564, title: "Complex de Llanogrande", route: "rionegro" },
+        { lat: 6.142842, lng: -75.432941, title: "Glorieta el Tablazo", route: "rionegro" },
+        { lat: 6.152020, lng: -75.435617, title: "Hospital San Vicente", route: "rionegro" },
+        { lat: 6.176733, lng: -75.436511, title: "Glorieta Aeropuerto JMC", route: "rionegro" },
+        { lat: 6.177627, lng: -75.448598, title: "Glorieta Sanjonia", route: "rionegro" },
+        { lat: 6.171337, lng: -75.478401, title: "Peaje Variante Palmas", route: "rionegro" },
+        { lat: 6.211022, lng: -75.554935, title: "EIA Las Palmas", route: "clinica" },
+
+        // Ruta Mayorca
+        { lat: 6.162508, lng: -75.6052413, title: "Paradero Centro Comercial Mayorca", route: "mayorca" },
+        { lat: 6.177702, lng: -75.595260, title: "Viva Envigado", route: "mayorca" },
+        { lat: 6.173689, lng: -75.596990, title: "Barrio Alcalá", route: "mayorca" },
+        { lat: 6.168286, lng: -75.588198, title: "Esquina Carrera 42, sector Guanteros", route: "mayorca" },
+        { lat: 6.164881, lng: -75.583104, title: "Carrera 33, lugar conocido como Famidrogas", route: "mayorca" },
+        { lat: 6.160037, lng: -75.579685, title: "Sector Camino Verde, cerca al Hospital Manuel Uribe Ángel", route: "mayorca" },
+        { lat: 6.164158, lng: -75.574841, title: "Centro Comercial City Plaza", route: "mayorca" },
+        { lat: 6.180823, lng: -75.568105, title: "Mall San Lucas", route: "mayorca" },
+        { lat: 6.186966, lng: -75.561448, title: "Loma Los Balsos", route: "mayorca" },
+        { lat: 6.185159, lng: -75.553037, title: "Glorieta Parque Roa", route: "mayorca" },
+        { lat: 6.153486, lng: -75.532917, title: "Mall Indiana / Alto de Palmas", route: "mayorca" },
     
         // Ruta Clínica
         { lat: 6.245913, lng: -75.603153, title: "Clínica Las Américas", route: "clinica" },
@@ -60,19 +80,6 @@ function RutaPredeterminada() {
         { lat: 6.248160, lng: -75.458670, title: "Supermercado Jumbo", route: "clinica" },
         { lat: 6.243970, lng: -75.463220, title: "Calle Madera", route: "clinica" },
         { lat: 6.211022, lng: -75.554935, title: "EIA Las Palmas", route: "clinica" },
-    
-        // Ruta Mayorca
-        { lat: 6.162180355593321, lng: -75.6061433250502, title: "Paradero Centro Comercial Mayorca", route: "mayorca" },
-        { lat: 6.170988, lng: -75.585761, title: "Viva Envigado", route: "mayorca" },
-        { lat: 6.173834, lng: -75.591364, title: "Barrio Alcalá", route: "mayorca" },
-        { lat: 6.175118, lng: -75.594299, title: "Esquina Carrera 42, sector Guanteros", route: "mayorca" },
-        { lat: 6.178245, lng: -75.598138, title: "Carrera 33, lugar conocido como Famidrogas", route: "mayorca" },
-        { lat: 6.172600, lng: -75.599190, title: "Sector Camino Verde, cerca al Hospital Manuel Uribe Ángel", route: "mayorca" },
-        { lat: 6.181287, lng: -75.603945, title: "Centro Comercial City Plaza", route: "mayorca" },
-        { lat: 6.191749, lng: -75.568170, title: "Mall San Lucas", route: "mayorca" },
-        { lat: 6.199270, lng: -75.564675, title: "Loma Los Balsos", route: "mayorca" },
-        { lat: 6.206225, lng: -75.556293, title: "Mall Indiana", route: "mayorca" },
-        { lat: 6.207570, lng: -75.557106, title: "Sancho Paisa", route: "mayorca" },
     
         // Ruta San Antonio
         { lat: 6.251470, lng: -75.563090, title: "Parque San Antonio", route: "sanAntonio" },
