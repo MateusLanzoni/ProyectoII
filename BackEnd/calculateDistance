@@ -35,3 +35,65 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, latt, ln
     }
   );
 }
+
+function getCoordinates(paradero) {
+  const coordinatesMap = {
+    "mayorca": { lat: 6.162180355593321, lng: -75.6061433250502 },
+    "viva envigado": { lat: 6.170988, lng: -75.585761 },
+    "alcalá": { lat: 6.173834, lng: -75.591364 },
+    "guanteros": { lat: 6.175118, lng: -75.594299 },
+    "famidrogas": { lat: 6.178245, lng: -75.598138 },
+    "camino verde": { lat: 6.172600, lng: -75.599190 },
+    "city plaza": { lat: 6.181287, lng: -75.603945 },
+    "san lucas": { lat: 6.191749, lng: -75.568170 },
+    "los balsos": { lat: 6.199270, lng: -75.564675 },
+    "mall indiana": { lat: 6.206225, lng: -75.556293 },
+    "sancho paisa": { lat: 6.207570, lng: -75.557106 },
+    "eia las palmas": { lat: 6.211022, lng: -75.554935 },
+
+    //Bosques de zuñiga
+    "bahía calle 25 sur": { lat: 6.200410, lng: -75.575770 },
+    "clinica especialidades oftalmológicas": { lat: 6.200982, lng: -75.575090 },
+    "academia la magia de tus bailes": { lat: 6.193214, lng: -75.576920 },
+    "supermercado euro la frontera": { lat: 6.190545, lng: -75.579895 },
+    "san lucas plaza": { lat: 6.192120, lng: -75.564000 }, // si es diferente al "San Lucas" anterior
+    "complex los balsos": { lat: 6.197650, lng: -75.562360 },
+    "restaurante marmoleo": { lat: 6.205370, lng: -75.559680 },
+
+    //Clinica las Americas
+    "clínica las américas": { lat: 6.245913, lng: -75.603153 },
+    "santa gema": { lat: 6.253410, lng: -75.604320 },
+    "solo kukos de la 33": { lat: 6.258070, lng: -75.567920 },
+
+    //Ruta San Antonio
+    "parque san antonio": { lat: 6.251470, lng: -75.563090 },
+    "torres de bomboná": { lat: 6.248700, lng: -75.564320 },
+    "parque de la milagrosa": { lat: 6.246630, lng: -75.560740 },
+    "la isla": { lat: 6.234520, lng: -75.561780 },
+
+    //Ruta Rionegro
+    "sector belén rionegro": { lat: 6.263920, lng: -75.431600 },
+    "glorieta del tránsito": { lat: 6.257140, lng: -75.439080 },
+    "puente de cuatro esquinas": { lat: 6.256350, lng: -75.444620 },
+    "supermercado éxito rionegro": { lat: 6.254280, lng: -75.452100 },
+    "cc san nicolás": { lat: 6.252920, lng: -75.454880 },
+    "cc sabana": { lat: 6.250540, lng: -75.456730 },
+    "supermercado jumbo": { lat: 6.248160, lng: -75.458670 },
+    "calle madera": { lat: 6.243970, lng: -75.463220 },
+
+    //Ruta Exito-Robledo
+    "éxito de robledo": { lat: 6.270882, lng: -75.599620 },
+    "rotonda de colombia con la 80": { lat: 6.263150, lng: -75.597110 },
+    "avenida centenario": { lat: 6.257390, lng: -75.593860 },
+    "centro comercial obelisco": { lat: 6.254320, lng: -75.590780 },
+    "carrera 78": { lat: 6.250980, lng: -75.586520 },
+    "edificio inteligente": { lat: 6.243310, lng: -75.579380 },
+    "la gloria de la 33": { lat: 6.250000, lng: -75.576820 },
+    "paradero de exposiciones": { lat: 6.245910, lng: -75.574960 },
+    "san diego": { lat: 6.237840, lng: -75.569620 },
+    "loma el indio": { lat: 6.227650, lng: -75.561230 }
+  };
+
+  return coordinatesMap[paradero.toLowerCase()] || "Paradero no reconocido";
+}
+
