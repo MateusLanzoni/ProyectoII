@@ -28,12 +28,12 @@ function RutaPredeterminada() {
 
       // Marker colors for each route
       const colors = {
-        clinica: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-        mayorca: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-        sanAntonio: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-        rionegro: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
-        exitoRobledo: 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png',
-        bosques: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png'
+        clinica: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+        mayorca: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+        sanAntonio: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
+        rionegro: 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+        exitoRobledo: 'https://maps.google.com/mapfiles/ms/icons/purple-dot.png',
+        bosques: 'https://maps.google.com/mapfiles/ms/icons/orange-dot.png'
       };
 
       // All stops from all routes, with specific color for each route
