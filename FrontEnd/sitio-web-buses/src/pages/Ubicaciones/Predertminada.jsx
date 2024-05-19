@@ -38,6 +38,17 @@ function RutaPredeterminada() {
 
       // All stops from all routes, with specific color for each route
       const allStops = [
+
+        // Ruta Rionegro
+        { lat: 6.263920, lng: -75.431600, title: "Sector Belén Rionegro", route: "rionegro" },
+        { lat: 6.257140, lng: -75.439080, title: "Glorieta del Tránsito", route: "rionegro" },
+        { lat: 6.256350, lng: -75.444620, title: "Puente de Cuatro Esquinas", route: "rionegro" },
+        { lat: 6.254280, lng: -75.452100, title: "Supermercado Éxito Rionegro", route: "rionegro" },
+        { lat: 6.252920, lng: -75.454880, title: "CC San Nicolás", route: "rionegro" },
+        { lat: 6.250540, lng: -75.456730, title: "CC Sabana", route: "rionegro" },
+        { lat: 6.248160, lng: -75.458670, title: "Supermercado Jumbo", route: "rionegro" },
+        { lat: 6.243970, lng: -75.463220, title: "Calle Madera", route: "rionegro" },
+    
         // Ruta Clínica
         { lat: 6.245913, lng: -75.603153, title: "Clínica Las Américas", route: "clinica" },
         { lat: 6.263920, lng: -75.431600, title: "Sector Belén Rionegro", route: "clinica" },
@@ -68,16 +79,6 @@ function RutaPredeterminada() {
         { lat: 6.248700, lng: -75.564320, title: "Torres de Bomboná", route: "sanAntonio" },
         { lat: 6.246630, lng: -75.560740, title: "Parque de La Milagrosa", route: "sanAntonio" },
         { lat: 6.234520, lng: -75.561780, title: "La Isla", route: "sanAntonio" },
-    
-        // Ruta Rionegro
-        { lat: 6.263920, lng: -75.431600, title: "Sector Belén Rionegro", route: "rionegro" },
-        { lat: 6.257140, lng: -75.439080, title: "Glorieta del Tránsito", route: "rionegro" },
-        { lat: 6.256350, lng: -75.444620, title: "Puente de Cuatro Esquinas", route: "rionegro" },
-        { lat: 6.254280, lng: -75.452100, title: "Supermercado Éxito Rionegro", route: "rionegro" },
-        { lat: 6.252920, lng: -75.454880, title: "CC San Nicolás", route: "rionegro" },
-        { lat: 6.250540, lng: -75.456730, title: "CC Sabana", route: "rionegro" },
-        { lat: 6.248160, lng: -75.458670, title: "Supermercado Jumbo", route: "rionegro" },
-        { lat: 6.243970, lng: -75.463220, title: "Calle Madera", route: "rionegro" },
     
         // Ruta Éxito Robledo
         { lat: 6.270882, lng: -75.599620, title: "Éxito de Robledo", route: "exitoRobledo" },
