@@ -14,8 +14,8 @@
     min-height: 50px;
 }
 .rutaRionegro{
-    width: 50%;
-    aspect-ratio: 14/6 ;
+    width: 70%;
+    aspect-ratio: 14/8 ;
     min-height: 50px;
 }
 .rutaSanAntonio{
@@ -29,8 +29,8 @@
     min-height: 50px;
 }
 .rutaPredeterminada{
-    width: 50%;
-    aspect-ratio: 14/6 ;
+    width: 70%;
+    aspect-ratio: 14/8 ;
     min-height: 50px;
 }
 @media (max-width: 690px){
@@ -55,8 +55,8 @@
     .rutaRionegro{
         margin-top: 15px;
         margin-bottom: 30px;
-        width: 60%;
-        aspect-ratio: 4/3;
+        width: 70%;
+        aspect-ratio: 14/8;
     }
     .rutaSanAntonio{
         margin-top: 15px;
@@ -64,14 +64,16 @@
         width: 60%;
         aspect-ratio: 4/3;
     }
-    .rutaSofaABosq{
+    .rutaSofaABosque{
         margin-top: 15px;
         margin-bottom: 30px;
         width: 60%;
         aspect-ratio: 4/3;
     }
-    
-
+    .rutaPredeterminada{
+        margin-top: 15px;
+        margin-bottom: 30px;
+        width: 70%;
+        aspect-ratio: 14/8;
+    }
 }
-
-

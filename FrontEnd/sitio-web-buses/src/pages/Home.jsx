@@ -50,7 +50,7 @@ export const Home = () => {
         <Navbar className='A'></Navbar>
         <div className='barra' >
           <select  className='opciones' value={ruta} onChange={(e)=>(handleOnChange(e))}>
-            <option className='opcion'value='preder'>Ruta Predeterminada</option>
+            <option className='opcion'value='preder'>Rutas</option>
             <option className='opcion' value='clinica'>Ruta Clinica</option>
             <option className='opcion' value='exito'>Ruta Exito-Robledo</option>
             <option className='opcion' value='mayorca'>Ruta Mayorca</option>
@@ -115,14 +115,16 @@ export const Home = () => {
               <br></br>
               <p>hora de llegada</p>
             </article>
-            <div className='ubiSec'></div>
+           
+            {ruta === 'clinica' ? <RutaExitoRo /> : (ruta !== 'preder' && ruta !== 'rionegro' && <RutaClinica />)}
+            
+            {ruta !== 'preder' && ruta !== 'rionegro' && (
             <article className='tiempo'>
-              <h3 className='nombreBus'>
-                  Ruta alternativa
-              </h3>
+              <h3 className='nombreBus'>Ruta Alternativa</h3>
               <br></br>
-              <p>hora de llegada</p>
+             
             </article>
+            )}
         </div>
      </div>
      <Footer></Footer>
