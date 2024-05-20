@@ -84,44 +84,108 @@ export const Home = () => {
             <article className='tiempo'>
                 {
                   ruta === 'clinica' && (
-                    <h3 className='nombreBus'>Ruta Clinica</h3>
+                   <> <h3 className='nombreBus'>Ruta Clinica</h3>
+                     <article className='tiempo'>
+                      <h3 className='horario-bus'>4:55 am</h3>
+                      <br></br>
+                      <h3 className='horario-bus'>6:20 am</h3>
+                      <br></br>
+                      <h3 className='horario-bus'>6:45 am</h3>
+                      <br></br>
+                      <h3 className='horario-bus'>8:45 am</h3>
+                      <br></br>
+                      <h3 className='horario-bus'>12:45 am</h3>
+                      </article> 
+                   </>
                   )
                 }
                 {
                   ruta === 'preder' && (
-                    <h3 className='nombreBus'>Mapa Principal</h3>
+                    <><h3 className='nombreBus'>Mapa Principal</h3>
+                    <article className='tiempo'>
+                      <h3 className='titulo-clinica'>Ruta Clinica</h3>
+                      <br></br>
+                      <h3 className='titulo-exito'>Ruta Exito</h3>
+                      <br></br>
+                      <h3 className='titulo-mayorca'>Ruta Mayorca</h3>
+                      <br></br>
+                      <h3 className='titulo-rionegro'>Ruta Rionegro</h3>
+                      <br></br>
+                      <h3 className='titulo-san'>Ruta San Antonio</h3>
+                      <br></br>
+                      <h3 className='titulo-sofasa'>Ruta Sofasa</h3>
+                    </article></>
                   )
                 }
                 {
                   ruta === 'exito' && (
-                    <h3 className='nombreBus'>Ruta Exito-Robledo</h3>
+                   <><h3 className='nombreBus'>Ruta Exito-Robledo</h3>
+                    
+                        <article className='tiempo'>
+                          <h3 className='horario-bus'>6:20 am</h3>
+                        </article> 
+                   </>
                   )
                 }
                 {
                   ruta === 'mayorca' && (
+                    <> 
                     <h3 className='nombreBus'>Ruta Mayorca</h3>
+                      <article className='tiempo'>
+                        <h3 className='horario-bus'>4:55 am</h3>
+                        <br></br>
+                        <h3 className='horario-bus'>6:20 am</h3>
+                        <br></br>
+                        <h3 className='horario-bus'>6:45 am</h3>
+                        <br></br>
+                        <h3 className='horario-bus'>8:45 am</h3>
+                      </article> 
+                   </>
                   )
                 }
                 {
                   ruta === 'rionegro' && (
+                    <>
                     <h3 className='nombreBus'>Ruta Rionegro</h3>
+                    <article className='tiempo'>
+                        <h3 className='horario-bus'>5:00 am</h3>
+                        <br></br>
+                        <h3 className='horario-bus'>6:10 am</h3>
+                    </article> 
+                    </>
                   )
                 }
                 {
                   ruta === 'sanAntonio' && (
-                    <h3 className='nombreBus'>Ruta San Antonio</h3>
+                   <> 
+                   <h3 className='nombreBus'>Ruta San Antonio</h3>
+                   <article className='tiempo'>
+                        <h3 className='horario-bus'>6:30 am</h3>
+                   </article> 
+                   </>
                   ) 
                 }
                 {
                   ruta === 'sofasa' && (
+                    <> 
                     <h3 className='nombreBus'>Ruta Sofasa</h3>
+                      <article className='tiempo'>
+                        <h3 className='horario-bus'>4:55 am</h3>
+                        <br></br>
+                        <h3 className='horario-bus'>6:20 am</h3>
+                        <br></br>
+                        <h3 className='horario-bus'>6:45 am</h3>
+                        <br></br>
+                        <h3 className='horario-bus'>8:45 am</h3>
+                    </article> 
+                   </>
                   ) 
                 }
-              <br></br>
-              <p>hora de llegada</p>
+              
             </article>
            
             {ruta === 'clinica' ? <RutaExitoRo /> : (ruta !== 'preder' && ruta !== 'rionegro' && <RutaClinica />)}
+
             
             {ruta !== 'preder' && ruta !== 'rionegro' && (
             <article className='tiempo'>
