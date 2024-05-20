@@ -54,9 +54,8 @@
     }
     .rutaRionegro{
         margin-top: 15px;
-        margin-bottom: 30px;
         width: 70%;
-        aspect-ratio: 14/8;
+        aspect-ratio: 11/8;
     }
     .rutaSanAntonio{
         margin-top: 15px;
@@ -72,8 +71,7 @@
     }
     .rutaPredeterminada{
         margin-top: 15px;
-        margin-bottom: 30px;
         width: 70%;
-        aspect-ratio: 14/8;
+        aspect-ratio: 11/8;
     }
 }

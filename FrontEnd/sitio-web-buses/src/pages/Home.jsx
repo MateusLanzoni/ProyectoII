@@ -88,6 +88,11 @@ export const Home = () => {
                   )
                 }
                 {
+                  ruta === 'preder' && (
+                    <h3 className='nombreBus'>Mapa Principal</h3>
+                  )
+                }
+                {
                   ruta === 'exito' && (
                     <h3 className='nombreBus'>Ruta Exito-Robledo</h3>
                   )

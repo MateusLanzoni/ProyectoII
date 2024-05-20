@@ -27,16 +27,14 @@ function RCLinica() {
       });
 
       const rutaClinicaStops = [
-        { lat: 6.245913, lng: -75.603153, title: "Clínica Las Américas" },
-        { lat: 6.263920, lng: -75.431600, title: "Sector Belén Rionegro" },
-        { lat: 6.257140, lng: -75.439080, title: "Glorieta del Tránsito" },
-        { lat: 6.256350, lng: -75.444620, title: "Puente de Cuatro Esquinas" },
-        { lat: 6.254280, lng: -75.452100, title: "Supermercado Éxito Rionegro" },
-        { lat: 6.252920, lng: -75.454880, title: "CC San Nicolás" },
-        { lat: 6.250540, lng: -75.456730, title: "CC Sabana" },
-        { lat: 6.248160, lng: -75.458670, title: "Supermercado Jumbo" },
-        { lat: 6.243970, lng: -75.463220, title: "Calle Madera" },
-        { lat: 6.211022, lng: -75.554935, title: "EIA Las Palmas" } // Añadir más paradas según sea necesario
+        { lat: 6.211745, lng: -75.594203, title: "Clínica Las Américas" },
+        { lat: 6.238489, lng: -75.603002, title: "Glorieta Santa Gema" },
+        { lat: 6.239123, lng: -75.590589, title: "Solo Kukos / Palace" },
+        { lat: 6.237100, lng: -75.569929, title: "San Diego" },
+        { lat: 6.195436, lng: -75.547296, title: "Mirador Palmas" },
+        { lat: 6.171274, lng: -75.546824, title: "Palmas" },
+        { lat: 6.153486, lng: -75.532917, title: "Mall Indiana / Alto de Palmas" },
+        { lat: 6.156926, lng: -75.518177, title: "EIA Las Palmas" },
     ];
 
     rutaClinicaStops.forEach(function(stop) {
@@ -46,6 +44,15 @@ function RCLinica() {
             title: stop.title
         });
     });
+
+    const clinicaPath = new google.maps.Polyline({
+      path: rutaClinicaStops.map(stop => ({ lat: stop.lat, lng: stop.lng })),
+      geodesic: true,
+      strokeColor: '#FF0000',
+      strokeOpacity: 1.0,
+      strokeWeight: 2
+    }); 
+    clinicaPath.setMap(map);
     };
 
     loadGoogleMapsScript();
@@ -59,9 +66,10 @@ function RCLinica() {
         }
       }
     };
+    
   }, []);
-
   return <div ref={mapRef} className="rutaClinica" />;
 }
-
 export default RCLinica;
+
+
